@@ -16,5 +16,7 @@
   },
   "homepage": "https://github.com/WilliamKelley/meteor-packages#readme",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
 }
