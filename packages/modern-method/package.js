@@ -9,12 +9,12 @@ Package.describe({
 Package.onUse(function (api) {
   api.versionsFrom('2.7.1');
   api.use('typescript');
-  api.mainModule('main.js');
+  api.mainModule('main.ts');
 });
 
 Package.onTest(function (api) {
   api.use('typescript');
   api.use('tinytest');
   api.use('williamkelley:modern-method');
-  api.mainModule('tests.js');
+  api.mainModule('tests.ts');
 });
