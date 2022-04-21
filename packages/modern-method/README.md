@@ -12,3 +12,7 @@ Planned:
 - strongly typed errors
 - per-method rate-limiting: `.setRateLimit(...)`
 - global rate-limiting: `setGlobalRateLimit(...)`
+
+## Development
+
+Test with `meteor test-packages ./.`
