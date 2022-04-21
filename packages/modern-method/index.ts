@@ -1,0 +1,1 @@
+export { ModernMethod } from './main';

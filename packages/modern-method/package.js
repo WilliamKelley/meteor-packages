@@ -1,9 +1,9 @@
 Package.describe({
-  name: 'modern-method',
+  name: 'williamkelley:modern-method',
   version: '0.0.1',
   summary: 'Define Meteor Methods in a modern way.',
   git: 'https://github.com/WilliamKelley/meteor-packages.git',
-  documentation: 'README.md',
+  documentation: './README.md',
 });
 
 Package.onUse(function (api) {
@@ -15,6 +15,6 @@ Package.onUse(function (api) {
 Package.onTest(function (api) {
   api.use('typescript');
   api.use('tinytest');
-  api.use('modern-method');
+  api.use('williamkelley:modern-method');
   api.mainModule('tests.js');
 });

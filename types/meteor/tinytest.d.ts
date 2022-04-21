@@ -1,6 +1,7 @@
-type AnyObject = Record<string, unknown>;
 // eslint-disable-next-line @typescript-eslint/ban-types
-type AnyFunction = Function;
+type AnyNonNullishValue = Object;
+// eslint-disable-next-line @typescript-eslint/ban-types
+type AnyFunctionLikeValue = Function;
 
 declare module 'meteor/tinytest' {
   namespace Tinytest {
@@ -9,17 +10,25 @@ declare module 'meteor/tinytest' {
     }
 
     interface Assertions {
-      ok(doc: AnyObject): void;
+      ok(doc: AnyNonNullishValue): void;
       expect_fail(): void;
-      fail(doc: AnyObject): void;
+      fail(doc: AnyNonNullishValue): void;
       runId(): string;
       equal<T>(actual: T, expected: T, message?: string, not?: boolean): void;
       notEqual<T>(actual: T, expected: T, message?: string): void;
-      instanceOf(obj: AnyObject, klass: AnyFunction, message?: string): void;
-      notInstanceOf(obj: AnyObject, klass: AnyFunction, message?: string): void;
+      instanceOf(
+        obj: AnyNonNullishValue,
+        klass: AnyFunctionLikeValue,
+        message?: string
+      ): void;
+      notInstanceOf(
+        obj: AnyNonNullishValue,
+        klass: AnyFunctionLikeValue,
+        message?: string
+      ): void;
       matches(actual: unknown, regexp: RegExp, message?: string): void;
       notMatches(actual: unknown, regexp: RegExp, message?: string): void;
-      throws(f: AnyFunction, expected?: string | RegExp): void;
+      throws(f: AnyFunctionLikeValue, expected?: string | RegExp): void;
       isTrue(v: boolean, msg?: string): void;
       isFalse(v: boolean, msg?: string): void;
       isNull(v: unknown, msg?: string): void;
@@ -29,14 +38,14 @@ declare module 'meteor/tinytest' {
       isNan(v: unknown, msg?: string): void;
       isNotNan(v: unknown, msg?: string): void;
       include<T>(
-        s: Array<T> | AnyObject | string,
+        s: Array<T> | AnyNonNullishValue | string,
         value: unknown,
         msg?: string,
         not?: boolean
       ): void;
 
       notInclude<T>(
-        s: Array<T> | AnyObject | string,
+        s: Array<T> | AnyNonNullishValue | string,
         value: unknown,
         msg?: string,
         not?: boolean
