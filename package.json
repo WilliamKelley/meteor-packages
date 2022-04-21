@@ -1,0 +1,20 @@
+{
+  "name": "meteor-packages",
+  "private": true,
+  "description": "A mono-repository for my personal Meteor packages.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamKelley/meteor-packages.git"
+  },
+  "author": "William Kelley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WilliamKelley/meteor-packages/issues"
+  },
+  "homepage": "https://github.com/WilliamKelley/meteor-packages#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
