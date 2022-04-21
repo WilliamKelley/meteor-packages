@@ -4,6 +4,7 @@
   "description": "A mono-repository for my personal Meteor packages.",
   "scripts": {
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "prettify": "prettier --ignore-unknown -w .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,8 @@
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
     "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
     "typescript": "^4.5.4"
   }
 }
