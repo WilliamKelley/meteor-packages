@@ -4,11 +4,11 @@ type AnyFunction = Function;
 
 declare module 'meteor/tinytest' {
   namespace Tinytest {
-    interface ILengthAble {
+    interface Lengthable {
       length: number;
     }
 
-    interface ITinytestAssertions {
+    interface Assertions {
       ok(doc: AnyObject): void;
       expect_fail(): void;
       fail(doc: AnyObject): void;
@@ -41,18 +41,15 @@ declare module 'meteor/tinytest' {
         msg?: string,
         not?: boolean
       ): void;
-      length(obj: ILengthAble, expected_length: number, msg?: string): void;
+      length(obj: Lengthable, expected_length: number, msg?: string): void;
       _stringEqual(actual: string, expected: string, msg?: string): void;
     }
 
-    function add(
-      description: string,
-      func: (test: ITinytestAssertions) => void
-    ): void;
+    function add(description: string, func: (test: Assertions) => void): void;
 
     function addAsync(
       description: string,
-      func: (test: ITinytestAssertions) => void
+      func: (test: Assertions) => void
     ): void;
   }
 }
