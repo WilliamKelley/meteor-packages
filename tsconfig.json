@@ -4,6 +4,9 @@
     "lib": [
       "es2020"
     ],
+    "checkJs": true,
+    "allowJs": true,
+    "outDir": "dist",
     "module": "commonjs",
     "target": "es2020",
     "strict": true,
@@ -23,6 +26,7 @@
     "importsNotUsedAsValues": "error"
   },
   "exclude": [
-    "**/.meteor/**"
+    "**/.meteor/**",
+    "dist"
   ]
 }
